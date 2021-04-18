@@ -55,6 +55,7 @@ public class InputAndMovement : MonoBehaviour
         Crouch();
         // If player presses space and is also on the ground
         Jump();
+        Shoot();
     }
 
     void getMovement()
@@ -123,6 +124,24 @@ public class InputAndMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
             moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, acceleration * Time.deltaTime);
+        }
+    }
+
+    public GameObject gun;
+    public LineRenderer trail;
+    void Shoot()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit shoot;
+            Physics.Raycast(gun.transform.position, gun.transform.forward, out shoot, 100f);
+            trail.enabled = true;
+            trail.SetPosition(0, gun.transform.position);
+            trail.SetPosition(1, shoot.point);
+        }
+        else
+        {
+            trail.enabled = false;
         }
     }
 }
