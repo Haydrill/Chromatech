@@ -56,6 +56,7 @@ public class InputAndMovement : MonoBehaviour
         // If player presses space and is also on the ground
         Jump();
         Shoot();
+        Reload();
     }
 
     void getMovement()
@@ -128,20 +129,39 @@ public class InputAndMovement : MonoBehaviour
     }
 
     public GameObject gun;
+    public Gun gunObject;
     public LineRenderer trail;
     void Shoot()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit shoot;
-            Physics.Raycast(gun.transform.position, gun.transform.forward, out shoot, 100f);
-            trail.enabled = true;
-            trail.SetPosition(0, gun.transform.position);
-            trail.SetPosition(1, shoot.point);
+            if(gunObject.ammoInMagazine != 0)
+            {
+                RaycastHit shoot;
+                Physics.Raycast(gun.transform.position, gun.transform.forward, out shoot, 100f);
+                trail.enabled = true;
+                trail.SetPosition(0, gun.transform.position);
+                trail.SetPosition(1, shoot.point);
+                gunObject.GunShot();
+            }
+            else
+            {
+                gunObject.GunEmpty();
+            }
         }
         else
         {
             trail.enabled = false;
+        }
+
+        
+    }
+
+    void Reload()
+    {
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            gunObject.Reload();
         }
     }
 }
