@@ -61,8 +61,8 @@ public class InputAndMovement : MonoBehaviour
 
     void getMovement()
     {
-        horizontalMovement = Input.GetAxisRaw("Horizontal");
-        verticalMovement = Input.GetAxisRaw("Vertical");
+        horizontalMovement = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
+        verticalMovement = Input.GetAxisRaw("Vertical") * Time.deltaTime;
 
         // this moves the player relative to where they are looking
         movementDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
@@ -121,6 +121,11 @@ public class InputAndMovement : MonoBehaviour
             transform.localScale = new Vector3(1f, .5f, 1f);
             moveSpeed = Mathf.Lerp(moveSpeed, crouchSpeed, acceleration * Time.deltaTime);
         }
+        else if (Input.GetKeyDown(KeyCode.C) && isGrounded) // move them slightly up when uncrouching to prevent clipping
+        {
+            Vector3 uncrouch = new Vector3(0, 1, 0);
+            transform.localPosition += uncrouch;
+        }
         else
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
@@ -138,7 +143,7 @@ public class InputAndMovement : MonoBehaviour
             if(gunObject.ammoInMagazine != 0)
             {
                 RaycastHit shoot;
-                Physics.Raycast(gun.transform.position, gun.transform.forward, out shoot, 100f);
+                Physics.Raycast(gun.transform.position, gun.transform.forward, out shoot);
                 trail.enabled = true;
                 trail.SetPosition(0, gun.transform.position);
                 trail.SetPosition(1, shoot.point);
