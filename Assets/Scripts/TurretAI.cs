@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class TurretAI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     private const int detectionRadiusSq = 225;
     public GameObject player;

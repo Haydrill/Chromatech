@@ -135,7 +135,7 @@ public class InputAndMovement : MonoBehaviour
 
     public GameObject gun;
     public Gun gunObject;
-    public LineRenderer trail;
+   // public LineRenderer trail;
     void Shoot()
     {
         if (Input.GetMouseButtonDown(0))
@@ -144,9 +144,9 @@ public class InputAndMovement : MonoBehaviour
             {
                 RaycastHit shoot;
                 Physics.Raycast(gun.transform.position, gun.transform.forward, out shoot);
-                trail.enabled = true;
-                trail.SetPosition(0, gun.transform.position);
-                trail.SetPosition(1, shoot.point);
+                //trail.enabled = true;
+                //trail.SetPosition(0, gun.transform.position);
+                //trail.SetPosition(1, shoot.point);
                 gunObject.GunShot();
             }
             else
@@ -156,7 +156,7 @@ public class InputAndMovement : MonoBehaviour
         }
         else
         {
-            trail.enabled = false;
+           // trail.enabled = false;
         }
 
         
