@@ -9,21 +9,38 @@ public class Target : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-        if (health <= 0 && tag != "Player")
+        if(health <= 0)
         {
-            StartCoroutine(Wait());
+            if (this.tag != "Player")
+            {
+                StartCoroutine(Wait());
+            }
+            else
+            {
+                PlayerDie();
+            }
         }
+        
     }
 
-    void Die()
+    void EnemyDie()
     {
         Destroy(gameObject);
     }
 
+    void PlayerDie()
+    {
+        FindObjectOfType<EndGameMgr>().Died();
+    }
+
     IEnumerator Wait()
     {
-        deathExplosion.Play();
-        yield return new WaitForSeconds(0.5f);
-        Die();
+        if(deathExplosion != null)
+        {
+            deathExplosion.Play();
+            yield return new WaitForSeconds(0.5f);
+        }
+        
+        EnemyDie();
     }
 }
