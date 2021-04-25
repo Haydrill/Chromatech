@@ -26,6 +26,7 @@ public class UIMgr : MonoBehaviour
     private float timer;
 
     public Gun currGun;
+    public Target player;
 
     // Update is called once per frame
     void Update()
@@ -39,6 +40,7 @@ public class UIMgr : MonoBehaviour
 
         currAmmoCount.text = currGun.ammoInMagazine.ToString("00");
         totalAmmoCount.text = "/" + currGun.totalAmmoCount.ToString("00");
+        playerHealth.text = player.health.ToString();
         gunType.text = currGun.gunName;
     }
 

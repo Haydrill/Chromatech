@@ -18,6 +18,7 @@ public class Gun : MonoBehaviour
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
+    public GameObject impactEffect;
 
     public AudioSource gunShotSound;
     public AudioSource emptyGunSound;
@@ -38,6 +39,8 @@ public class Gun : MonoBehaviour
             {
                 target.TakeDamage(damage);
             }
+
+            Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         }
     }
 

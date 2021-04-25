@@ -1142,6 +1142,7 @@ GameObject:
   - component: {fileID: 6823391644482202825}
   - component: {fileID: 6823391644482202824}
   - component: {fileID: 6823391644482202827}
+  - component: {fileID: 114643973517502714}
   - component: {fileID: 6823391644482202826}
   m_Layer: 0
   m_Name: Player
@@ -1255,6 +1256,19 @@ MonoBehaviour:
   cameraTilt: 20
   cameraTiltTime: 20
   currentTilt: 0
+--- !u!114 &114643973517502714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6823391644482203444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4887a4c6975b34e8ee3ec308a50d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!120 &6823391644482202826
 LineRenderer:
   m_ObjectHideFlags: 0
