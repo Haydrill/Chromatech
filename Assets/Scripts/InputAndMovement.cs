@@ -31,6 +31,9 @@ public class InputAndMovement : MonoBehaviour
     // only public for viewing purposes
     public bool isGrounded;
 
+    public EndGameMgr gameStateCheck;
+    public bool gameOver = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -40,23 +43,28 @@ public class InputAndMovement : MonoBehaviour
     // using Unity physics on rb so need fixed update
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (!gameOver)
+            MovePlayer();
     }
 
     private void Update()
     {
-        // Use a raycast to detect if ground is directly below player
-        isGrounded = Physics.CheckSphere(transform.position - new Vector3(0,1,0), 0.4f, groundLayer);
-        //Debug.Log(isGrounded);
+        gameOver = gameStateCheck.gameOver;
+        if (!gameOver)
+        {
+            // Use a raycast to detect if ground is directly below player
+            isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 1, 0), 0.4f, groundLayer);
+            //Debug.Log(isGrounded);
 
-        getMovement();
-        ControlDrag();
-        Sprint();
-        Crouch();
-        // If player presses space and is also on the ground
-        Jump();
-        Shoot();
-        Reload();
+            getMovement();
+            ControlDrag();
+            Sprint();
+            Crouch();
+            // If player presses space and is also on the ground
+            Jump();
+            Shoot();
+            Reload();
+        }
     }
 
     void getMovement()

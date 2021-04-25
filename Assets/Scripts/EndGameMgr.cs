@@ -7,7 +7,7 @@ using TMPro;
 
 public class EndGameMgr : MonoBehaviour
 {
-    bool gameOver = false;
+    public bool gameOver = false;
     public float restartTimer = 1.5f;
     public GameObject mainUI;
 
