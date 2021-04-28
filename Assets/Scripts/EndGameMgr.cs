@@ -25,6 +25,7 @@ public class EndGameMgr : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Debug.Log("Win");
+            Debug.Log(gameOver);
             //Invoke("Restart", restartTimer);
         }
     }
