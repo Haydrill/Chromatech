@@ -50,6 +50,7 @@ public class InputAndMovement : MonoBehaviour
     private void Update()
     {
         gameOver = gameStateCheck.gameOver;
+        Debug.Log(gameOver);
         if (!gameOver)
         {
             // Use a raycast to detect if ground is directly below player

@@ -17292,10 +17292,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2232263976885024499, guid: 6b3b7aa6ebd3bdf42ae00fe12c204ab5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232263976885024507, guid: 6b3b7aa6ebd3bdf42ae00fe12c204ab5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3570556134734066558, guid: 6b3b7aa6ebd3bdf42ae00fe12c204ab5,
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3570556135977616452, guid: 6b3b7aa6ebd3bdf42ae00fe12c204ab5,
+        type: 3}
+      propertyPath: gameStateCheck
+      value: 
+      objectReference: {fileID: 1767261063}
+    - target: {fileID: 3570556135977616453, guid: 6b3b7aa6ebd3bdf42ae00fe12c204ab5,
+        type: 3}
+      propertyPath: gameStateCheck
+      value: 
+      objectReference: {fileID: 1767261063}
+    - target: {fileID: 3570556135977616454, guid: 6b3b7aa6ebd3bdf42ae00fe12c204ab5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3570556135977617336, guid: 6b3b7aa6ebd3bdf42ae00fe12c204ab5,
         type: 3}
