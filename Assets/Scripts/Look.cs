@@ -16,6 +16,7 @@ public class Look : MonoBehaviour
 
     public EndGameMgr gameStateCheck;
     public bool gameOver = false;
+    bool isPaused = false;
 
     private void Start()
     {
@@ -27,8 +28,9 @@ public class Look : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isPaused = GameObject.Find("Player").GetComponent<InputAndMovement>().isPaused;
         gameOver = gameStateCheck.gameOver;
-        if (!gameOver)
+        if (!gameOver && !isPaused)
         {
             mouseX = Input.GetAxisRaw("Mouse X");
             mouseY = Input.GetAxisRaw("Mouse Y");

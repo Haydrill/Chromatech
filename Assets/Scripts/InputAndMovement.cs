@@ -46,7 +46,7 @@ public class InputAndMovement : MonoBehaviour
     // using Unity physics on rb so need fixed update
     private void FixedUpdate()
     {
-        if (!gameOver)
+        if (!gameOver && !isPaused)
             MovePlayer();
     }
 
@@ -56,7 +56,7 @@ public class InputAndMovement : MonoBehaviour
 
         UpdateIsPaused();
 
-        if (!gameOver || !isPaused)
+        if (!gameOver && !isPaused)
         {
             // Use a raycast to detect if ground is directly below player
             isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 1, 0), 0.4f, groundLayer);
