@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIMgr : MonoBehaviour
 {
@@ -17,11 +18,11 @@ public class UIMgr : MonoBehaviour
 
     }
 
-    public Text currAmmoCount;
-    public Text totalAmmoCount;
-    public Text gunType;
-    public Text stopwatch;
-    public Text playerHealth;
+    public TextMeshProUGUI currAmmoCount;
+    public TextMeshProUGUI totalAmmoCount;
+    public TextMeshProUGUI gunType;
+    public TextMeshProUGUI stopwatch;
+    public TextMeshProUGUI playerHealth;
 
     private float timer;
 

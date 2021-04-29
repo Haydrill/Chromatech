@@ -20,6 +20,7 @@ public class TurretAI : MonoBehaviour
     private Vector3 distanceToPlayer = Vector3.positiveInfinity;
     public LineRenderer line;
     public AudioSource detectionSound;
+    public AudioSource shootSound;
 
     private void Start()
     {
@@ -71,6 +72,7 @@ public class TurretAI : MonoBehaviour
             Debug.Log(hit.transform.name);
             muzzleFlash1.Play();
             muzzleFlash2.Play();
+            shootSound.Play();
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {

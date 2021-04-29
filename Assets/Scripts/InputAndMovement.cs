@@ -20,6 +20,8 @@ public class InputAndMovement : MonoBehaviour
     public LayerMask groundLayer;
     public Transform orientation;
 
+    public GameObject pauseMenu;
+
     // Not assignable
     float playerHeight = 2f;
     Rigidbody rb;
@@ -33,6 +35,7 @@ public class InputAndMovement : MonoBehaviour
 
     public EndGameMgr gameStateCheck;
     public bool gameOver = false;
+    public bool isPaused = false;
 
     private void Start()
     {
@@ -50,8 +53,10 @@ public class InputAndMovement : MonoBehaviour
     private void Update()
     {
         gameOver = gameStateCheck.gameOver;
-        Debug.Log(gameOver);
-        if (!gameOver)
+
+        UpdateIsPaused();
+
+        if (!gameOver || !isPaused)
         {
             // Use a raycast to detect if ground is directly below player
             isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 1, 0), 0.4f, groundLayer);
@@ -65,6 +70,19 @@ public class InputAndMovement : MonoBehaviour
             Jump();
             Shoot();
             Reload();
+            Paused();
+        }
+    }
+
+    void UpdateIsPaused()
+    {
+        if(Time.timeScale == 0)
+        {
+            isPaused = true;
+        }
+        else
+        {
+            isPaused = false;
         }
     }
 
@@ -153,9 +171,6 @@ public class InputAndMovement : MonoBehaviour
             {
                 RaycastHit shoot;
                 Physics.Raycast(gun.transform.position, gun.transform.forward, out shoot);
-                //trail.enabled = true;
-                //trail.SetPosition(0, gun.transform.position);
-                //trail.SetPosition(1, shoot.point);
                 gunObject.GunShot();
             }
             else
@@ -163,12 +178,6 @@ public class InputAndMovement : MonoBehaviour
                 gunObject.GunEmpty();
             }
         }
-        else
-        {
-           // trail.enabled = false;
-        }
-
-        
     }
 
     void Reload()
@@ -176,6 +185,17 @@ public class InputAndMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.R))
         {
             gunObject.Reload();
+        }
+    }
+
+    void Paused()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
         }
     }
 }

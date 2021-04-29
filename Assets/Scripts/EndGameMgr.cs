@@ -12,7 +12,7 @@ public class EndGameMgr : MonoBehaviour
     public GameObject mainUI;
 
     public GameObject completeUI;
-    public Text mainUITime;
+    public TextMeshProUGUI mainUITime;
     public TMP_Text finalTime;
     public void Completed()
     {
@@ -49,6 +49,7 @@ public class EndGameMgr : MonoBehaviour
     {
         // restart from the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
     public void Menu()
