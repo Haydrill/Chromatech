@@ -320,7 +320,7 @@ Transform:
   - {fileID: 1221704255}
   - {fileID: 639109253}
   m_Father: {fileID: 441668892}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
 --- !u!1001 &22021254
 PrefabInstance:
@@ -372,7 +372,7 @@ PrefabInstance:
     - target: {fileID: 1154245091461504621, guid: 2c1db9480ce079a4aabd23c2e5dce92d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1154245091461504621, guid: 2c1db9480ce079a4aabd23c2e5dce92d,
         type: 3}
@@ -1755,6 +1755,7 @@ GameObject:
   - component: {fileID: 213544763}
   - component: {fileID: 213544762}
   - component: {fileID: 213544761}
+  - component: {fileID: 213544764}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -1806,7 +1807,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c1b92366560326341be67e3f60ec1a9a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1834,6 +1835,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213544759}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!328 &213544764
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213544759}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: d13546762f6a98e4bb34023e69df1daf, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: fbd67c9fbc3158448b93c0bdc9a1d494, type: 2}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: _DetailAlbedoMap
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
+  m_Url: 
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
 --- !u!1 &247276798 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5852339489863217521, guid: b2c8553b555e3fd4eb73b729927c5508,
@@ -2362,7 +2395,7 @@ Transform:
   - {fileID: 1552821496}
   - {fileID: 1593031391}
   m_Father: {fileID: 441668892}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!1 &308639175
 GameObject:
@@ -2631,12 +2664,12 @@ Transform:
   - {fileID: 1762750079}
   - {fileID: 103177295}
   - {fileID: 2094836236}
-  - {fileID: 1809411270}
   - {fileID: 1330363714}
-  - {fileID: 1907264104}
   - {fileID: 1582389080}
   - {fileID: 299921637}
   - {fileID: 18193218}
+  - {fileID: 1809411270}
+  - {fileID: 1907264104}
   - {fileID: 277823395}
   - {fileID: 449269518}
   - {fileID: 668693214}
@@ -3608,6 +3641,7 @@ GameObject:
   - component: {fileID: 608988708}
   - component: {fileID: 608988707}
   - component: {fileID: 608988706}
+  - component: {fileID: 608988709}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -3659,7 +3693,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 75b6ddd3cab53e045b7b301949584e79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3687,6 +3721,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608988704}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!328 &608988709
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608988704}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 92bb9e1397a08dd4da491ff4a7aa9c94, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: d84fe7c23c44b7f4683ce9d82cfaabb4, type: 2}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: _MainTex
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
+  m_Url: 
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
 --- !u!4 &636954734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5753856180499168014, guid: ab8d286bf66ed0245accddadb7642d63,
@@ -7133,7 +7199,7 @@ Transform:
   - {fileID: 865602741}
   - {fileID: 1342012374}
   m_Father: {fileID: 441668892}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1337311468
 PrefabInstance:
@@ -8189,6 +8255,7 @@ GameObject:
   - component: {fileID: 1515723113}
   - component: {fileID: 1515723112}
   - component: {fileID: 1515723111}
+  - component: {fileID: 1515723114}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -8240,7 +8307,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8e423ca2f9fa23f47866f67f870b8b4f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8268,6 +8335,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515723109}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!328 &1515723114
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515723109}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 6cda0561d9ee0144da8ec9f34a6191ce, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 7c05afa06afdc12409a3d872e40ac7e9, type: 2}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: _MainTex
+  m_RenderMode: 2
+  m_AspectRatio: 0
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
+  m_Url: 
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
 --- !u!4 &1524969874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6755678247877072120, guid: 480f1fa75a91b864f96f75706828e375,
@@ -8616,7 +8715,7 @@ Transform:
   - {fileID: 213544760}
   - {fileID: 1680814972}
   m_Father: {fileID: 441668892}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -105.00001, z: 0}
 --- !u!4 &1593031391 stripped
 Transform:
@@ -10152,7 +10251,7 @@ Transform:
   - {fileID: 1129883287}
   - {fileID: 384577253}
   m_Father: {fileID: 441668892}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1820349599
 PrefabInstance:
@@ -10839,7 +10938,7 @@ PrefabInstance:
     - target: {fileID: 5852339490673037780, guid: b2c8553b555e3fd4eb73b729927c5508,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5852339490673037780, guid: b2c8553b555e3fd4eb73b729927c5508,
         type: 3}
