@@ -12,7 +12,8 @@ public class Look : MonoBehaviour
     // variables for mouse input and camera rotation
     float mouseX, mouseY;
     float xRot, yRot;
-    public float mouseSensitivity = 30;
+    [Range(1,100f)]
+    public float mouseSensitivity = 21;
 
     public EndGameMgr gameStateCheck;
     public bool gameOver = false;
@@ -46,5 +47,10 @@ public class Look : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(xRot, yRot, wallRun.currentTilt);
             orientation.transform.localRotation = Quaternion.Euler(0, yRot, 0);
         }
+    }
+
+    public void SetSensitivity(float sens)
+    {
+        mouseSensitivity = sens;
     }
 }
