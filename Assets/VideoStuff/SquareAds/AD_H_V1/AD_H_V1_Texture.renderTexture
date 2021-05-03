@@ -6,7 +6,7 @@ RenderTexture:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AD_D_V2_Texture
+  m_Name: AD_H_V1_Texture
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -15,7 +15,7 @@ RenderTexture:
   m_Width: 256
   m_Height: 256
   m_AntiAliasing: 1
-  m_DepthFormat: 2
+  m_DepthFormat: 0
   m_ColorFormat: 0
   m_MipMap: 0
   m_GenerateMips: 1
