@@ -24,7 +24,7 @@ public class OptionsMenu : MonoBehaviour
     public void SetSliders()
     {
         volume.value = PlayerPrefs.GetFloat("volume", .3f);
-        sens.value = PlayerPrefs.GetFloat("sens", .21f);
+        sens.value = PlayerPrefs.GetFloat("sens", 20f);
     }
 
     //public TextMeshProUGUI volumeText;
@@ -33,7 +33,7 @@ public class OptionsMenu : MonoBehaviour
     public void SetText()
     {
         //volumeText.text = PlayerPrefs.GetFloat("volume", .3f).ToString();
-        sensText.text = PlayerPrefs.GetFloat("sens", 21f).ToString();
+        sensText.text = PlayerPrefs.GetFloat("sens", 20f).ToString();
     }
 
     public void Awake()
