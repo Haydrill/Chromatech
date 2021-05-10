@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Credit to Plai
+
 public class WallRun : MonoBehaviour
 {
+    // tracking jumps remaining
     public InputAndMovement jumps;
 
     // Orientaiton for rotation
@@ -20,7 +23,8 @@ public class WallRun : MonoBehaviour
 
     public bool wallLeft = false;
     public bool wallRight = false;
-    RaycastHit leftWallRaycast; // raycasts used for wall detection
+    // raycasts used for wall detection
+    RaycastHit leftWallRaycast;
     RaycastHit rightWallRaycast;
 
     // Camera adjustments
@@ -43,12 +47,12 @@ public class WallRun : MonoBehaviour
             if (wallLeft)
             {
                 StartWallRun();
-                Debug.Log("Wall run left");
+                //Debug.Log("Wall run left");
             }
             else if (wallRight)
             {
                 StartWallRun();
-                Debug.Log("Wall run right");
+                //Debug.Log("Wall run right");
             }
             else
                 EndWallRun();

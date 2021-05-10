@@ -27,12 +27,11 @@ public class InputAndMovement : MonoBehaviour
     public AudioSource jumpingSound;
 
     // Not assignable
-    float playerHeight = 2f;
     Rigidbody rb;
 
     Vector3 movementDirection;
-    float horizontalMovement;
-    float verticalMovement;
+    float sideMovement;
+    float forwardMovement;
 
     // only public for viewing purposes
     public bool isGrounded;
@@ -64,9 +63,8 @@ public class InputAndMovement : MonoBehaviour
         {
             // Use a raycast to detect if ground is directly below player
             isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 1, 0), 0.4f, groundLayer);
-            //Debug.Log(isGrounded);
-
-            getMovement();
+            
+            GetMovement();
             ControlDrag();
             Sprint();
             Crouch();
@@ -97,13 +95,13 @@ public class InputAndMovement : MonoBehaviour
         }
     }
 
-    void getMovement()
+    void GetMovement()
     {
-        horizontalMovement = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
-        verticalMovement = Input.GetAxisRaw("Vertical") * Time.deltaTime;
+        sideMovement = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
+        forwardMovement = Input.GetAxisRaw("Vertical") * Time.deltaTime;
 
         
-        if (isGrounded && (horizontalMovement != 0 || verticalMovement != 0))
+        if (isGrounded && (sideMovement != 0 || forwardMovement != 0))
         {
             if (!walkingSound.isPlaying && !isPaused)
             {
@@ -116,7 +114,7 @@ public class InputAndMovement : MonoBehaviour
         }
 
         // this moves the player relative to where they are looking
-        movementDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
+        movementDirection = orientation.forward * forwardMovement + orientation.right * sideMovement;
     }
 
     void MovePlayer()
@@ -211,7 +209,7 @@ public class InputAndMovement : MonoBehaviour
 
     public GameObject gun;
     public Gun gunObject;
-   // public LineRenderer trail;
+   
     void Shoot()
     {
         if (Input.GetMouseButtonDown(0))
