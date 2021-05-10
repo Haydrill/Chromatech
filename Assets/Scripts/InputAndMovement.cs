@@ -22,6 +22,10 @@ public class InputAndMovement : MonoBehaviour
 
     public GameObject pauseMenu;
 
+    public AudioSource walkingSound;
+    public AudioSource runningSound;
+    public AudioSource jumpingSound;
+
     // Not assignable
     float playerHeight = 2f;
     Rigidbody rb;
@@ -72,6 +76,13 @@ public class InputAndMovement : MonoBehaviour
             Reload();
             Paused();
         }
+        else
+        {
+            if (runningSound.isPlaying)
+            {
+                runningSound.Stop();
+            }
+        }
     }
 
     void UpdateIsPaused()
@@ -91,18 +102,36 @@ public class InputAndMovement : MonoBehaviour
         horizontalMovement = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
         verticalMovement = Input.GetAxisRaw("Vertical") * Time.deltaTime;
 
+        
+        if (isGrounded && (horizontalMovement != 0 || verticalMovement != 0))
+        {
+            if (!walkingSound.isPlaying && !isPaused)
+            {
+                walkingSound.Play();
+            }
+        }
+        else
+        {
+            walkingSound.Stop();
+        }
+
         // this moves the player relative to where they are looking
         movementDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
     }
+
     void MovePlayer()
     {
         if(isGrounded)
         {
             rb.AddForce(movementDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
             jumpsLeft = 1;
+            
         }
         else
+        {
             rb.AddForce(movementDirection.normalized * moveSpeed * movementMultiplier * airMovementMultiplier, ForceMode.Acceleration);
+        }
+            
     }
 
     void Jump()
@@ -114,12 +143,22 @@ public class InputAndMovement : MonoBehaviour
                 rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
                 rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             }
+
+            if (!jumpingSound.isPlaying && !isPaused)
+            {
+                jumpingSound.Play();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Space) && (jumpsLeft != 0))
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             jumpsLeft -= 1;
+
+            if (!jumpingSound.isPlaying && !isPaused)
+            {
+                jumpingSound.Play();
+            }
         }
 
     }
@@ -133,11 +172,21 @@ public class InputAndMovement : MonoBehaviour
     {
         if ( Input.GetKey(KeyCode.LeftShift) && isGrounded )
         {
+            if (walkingSound.isPlaying)
+            {
+                walkingSound.Stop();
+            }
+
             moveSpeed = Mathf.Lerp(moveSpeed, runSpeed, acceleration * Time.deltaTime);
+            if(!runningSound.isPlaying && !isPaused)
+            {
+                runningSound.Play();
+            }
         }
         else
         {
             moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, acceleration * Time.deltaTime);
+            runningSound.Stop();
         }
     }
 

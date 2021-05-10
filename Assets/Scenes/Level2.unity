@@ -15618,6 +15618,7 @@ GameObject:
   - component: {fileID: 1515723112}
   - component: {fileID: 1515723111}
   - component: {fileID: 1515723114}
+  - component: {fileID: 1515723116}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -15625,20 +15626,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1515723110
-Transform:
+--- !u!224 &1515723110
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515723109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.09, y: 6.33, z: 8.93}
+  m_LocalPosition: {x: 0, y: 0, z: 8.93}
   m_LocalScale: {x: 0.5, y: 8, z: 12}
   m_Children: []
   m_Father: {fileID: 1330363714}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3.09, y: 6.33}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1515723111
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15715,12 +15721,12 @@ VideoPlayer:
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: 
+  m_Url: Assets/Sci-Fi Neon City HDRP/Textures/ADs_V2/Ad_D_V2/Ad_D_Video_V2.mp4
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
@@ -15729,6 +15735,14 @@ VideoPlayer:
   m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
+--- !u!222 &1515723116
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515723109}
+  m_CullTransparentMesh: 0
 --- !u!4 &1524969874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6755678247877072120, guid: 480f1fa75a91b864f96f75706828e375,
@@ -19629,7 +19643,8 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3529280322513809178, guid: b2c8553b555e3fd4eb73b729927c5508, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b2c8553b555e3fd4eb73b729927c5508, type: 3}
 --- !u!224 &1830428906 stripped
 RectTransform:

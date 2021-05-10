@@ -29,6 +29,9 @@ public class WallRun : MonoBehaviour
     public float cameraTiltTime;
     public float currentTilt;
 
+    // Wallrun Audio
+    public AudioSource wallrunSound;
+
     // Update is called once per frame
     void Update()
     {
@@ -59,6 +62,7 @@ public class WallRun : MonoBehaviour
         wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallRaycast, wallDist);
         wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallRaycast, wallDist);
     }
+
     bool CanWallRun()
     {
         return !Physics.Raycast(transform.position, Vector3.down, minJumpHeight); // check if the player is at least min jump height off ground
