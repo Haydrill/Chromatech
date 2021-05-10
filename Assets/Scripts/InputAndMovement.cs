@@ -239,7 +239,7 @@ public class InputAndMovement : MonoBehaviour
 
     void Paused()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
